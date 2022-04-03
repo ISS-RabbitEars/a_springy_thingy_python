@@ -71,7 +71,7 @@ cnvrt = np.pi/180
 thetao *= cnvrt
 omegao *= cnvrt
 mr = 0.5
-tf = 1 
+tf = 60 
 
 p = m,xa,ya,xb,yb,k1,k2,r1eq,r2eq
 ic = ro,vo,thetao,omegao
@@ -179,8 +179,8 @@ def run(frame):
 	ax.set_facecolor('xkcd:black')
 
 ani=animation.FuncAnimation(fig,run,frames=nframes)
-#writervideo = animation.FFMpegWriter(fps=nfps)
-#ani.save('springy_thingy.mp4', writer=writervideo)
+writervideo = animation.FFMpegWriter(fps=nfps)
+ani.save('springy_thingy.mp4', writer=writervideo)
 plt.show()
 
 
